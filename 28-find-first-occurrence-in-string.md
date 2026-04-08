@@ -1,14 +1,16 @@
-````md
-# 28. Find the Index of the First Occurrence in a String
+# 🔍 28. Find the Index of the First Occurrence in a String
 
 ## 🔗 Problem Link
-https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
+[LeetCode Problem](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+
+---
 
 ## ⚡ Difficulty
-Easy
+**Easy**
 
 ## 🏷️ Topics
-String, Two Pointers
+- String  
+- Two Pointers  
 
 ---
 
@@ -25,29 +27,29 @@ If `needle` is not found → return `-1`.
 
 ---
 
-## 💭 My Initial Thought
+## 💭 Initial Thought Process
 
-My thinking was:
+My approach:
 
-👉 Check if `needle` exists in `haystack`  
-👉 If yes, then find where it starts  
+- Check if `needle` exists in `haystack`
+- If yes, find where it starts
 
-So I used slicing to compare parts of the string.
+Used **string slicing** to compare substrings.
 
 ---
 
-## ⚡ Approach 1 — Manual Sliding Window
+## ⚡ Approach 1 — Sliding Window (Manual)
 
 ### 🧠 Idea
 
-- Loop through `haystack`
-- Take substring of length `needle`
+- Traverse `haystack`
+- Extract substring of length `needle`
 - Compare with `needle`
-- If match → return index
+- Return index if match is found
 
 ---
 
-## 💻 Code
+### 💻 Code
 
 ```python
 class Solution:
@@ -61,22 +63,33 @@ class Solution:
         for i in range(n):
             if haystack[i:i+m] == needle:
                 return i
-````
+```
 
 ---
 
 ## ⚠️ Observation
 
-👉 The check `if needle not in haystack` is optional
+The check:
 
-Because:
+```python
+if needle not in haystack:
+```
 
-* If no match is found, loop will automatically end
-* And function can return `-1`
+is **optional** because:
+
+- If no match is found, loop naturally ends
+- We can return `-1` afterward
 
 ---
 
-## ⚡ Improved Version (Cleaner)
+## ⚡ Improved Version (Optimized Loop)
+
+### ✅ Key Improvement
+Limit loop range to avoid unnecessary checks.
+
+---
+
+### 💻 Code
 
 ```python
 class Solution:
@@ -97,14 +110,14 @@ class Solution:
 
 ### 🧠 Idea
 
-Python already provides a direct method:
+Python provides:
 
-👉 `find()` returns the index
-👉 Returns `-1` if not found
+- `str.find()` → returns index of first match  
+- Returns `-1` if not found  
 
 ---
 
-## 💻 Code
+### 💻 Code
 
 ```python
 class Solution:
@@ -114,113 +127,100 @@ class Solution:
 
 ---
 
-## 🧠 Why This Works
-
-Example:
+## 🧠 Example
 
 ```text
 haystack = "sadbutsad"
 needle = "sad"
 ```
 
-* First occurrence starts at index `0`
+**Output:** `0`  
+(First occurrence starts at index 0)
 
 ---
 
 ## ⏱️ Time Complexity
 
-| Approach | Time                        |
-| -------- | --------------------------- |
-| Manual   | O(n * m)                    |
-| Built-in | O(n) (optimized internally) |
+| Approach   | Complexity |
+|-----------|-----------|
+| Manual     | O(n × m)  |
+| Built-in   | O(n)      |
 
 ---
 
 ## 💾 Space Complexity
 
-`O(1)`
+**O(1)**
 
 ---
 
 ## ⚠️ Edge Cases
 
-### Needle Not Present
-
+### ❌ Needle Not Present
 ```text
 haystack = "hello"
 needle = "world"
 ```
-
 Output → `-1`
 
 ---
 
-### Empty Needle
-
+### ⚠️ Empty Needle
 ```text
 haystack = "abc"
 needle = ""
 ```
-
 Output → `0` (by definition)
 
 ---
 
-### Same String
-
+### ✅ Same String
 ```text
 haystack = "abc"
 needle = "abc"
 ```
-
 Output → `0`
 
 ---
 
-## 🎯 Interview Takeaway
+## 🎯 Interview Takeaways
 
 This problem tests:
 
-* string traversal
-* substring comparison
-* sliding window idea
+- String traversal  
+- Substring comparison  
+- Sliding window technique  
 
-👉 Important:
-
-* Always mention manual approach first
-* Then mention built-in optimization
-
----
-
-## 📌 What I Learned
-
-* How substring matching works
-* Importance of limiting loop to `n - m + 1`
-* Built-in functions can simplify solutions
+👉 Best practice:
+1. Explain manual approach first  
+2. Then mention built-in optimization  
 
 ---
 
-## 🔥 Final Thought
+## 📌 Key Learnings
 
-My thinking:
-
-1. First → check substring manually
-2. Then → optimize loop range
-3. Finally → use built-in `.find()`
-
-👉 Always good to know both manual and built-in solutions
+- Substring matching using slicing  
+- Importance of `n - m + 1` boundary  
+- Built-in methods can simplify code  
 
 ---
 
-## 🚀 Key Pattern Learned
+## 🚀 Final Thought
 
-👉 **"Sliding window on strings for substring matching"**
+Approach evolution:
+
+1. Start with brute-force (manual check)  
+2. Optimize loop bounds  
+3. Use built-in functions when appropriate  
+
+---
+
+## 🔥 Key Pattern
+
+👉 **Sliding Window on Strings**
 
 Used in:
 
-* String search problems
-* Pattern matching
-* Text processing
-
-```
-```
+- Substring search  
+- Pattern matching  
+- Text processing  
