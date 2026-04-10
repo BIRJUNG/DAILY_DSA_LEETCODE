@@ -1,4 +1,4 @@
-````md
+md
 # 2481. Minimum Cuts to Divide a Circle
 
 ## 🔗 Problem Link
@@ -186,5 +186,3 @@ Used in:
 * optimization problems
 * pattern-based questions
 
-```
-```
