@@ -3,15 +3,15 @@
 ## 🔗 Problem Link
 https://leetcode.com/problems/fibonacci-number/
 
-## ⚡ Difficulty
+##  Difficulty
 Easy
 
-## 🏷️ Topics
+##  Topics
 Math, Dynamic Programming, Recursion
 
 ---
 
-## 🧩 Problem Summary
+##  Problem Summary
 
 The Fibonacci sequence is defined as:
 
@@ -23,23 +23,23 @@ Given an integer `n`, return the value of `F(n)`.
 
 ---
 
-## 💭 Intuition
+##  Intuition
 
 👉 Follow the definition directly  
 👉 Then optimize to avoid repeated work
 
 ---
 
-## 🐢 Approach 1 — Pure Recursion
+##  Approach 1 — Pure Recursion
 
-### 🧠 Idea
+###  Idea
 
 - Base case: if `n == 0` or `n == 1`, return `n`
 - Otherwise → compute recursively
 
 ---
 
-## 💻 Code
+##  Code
 
 ```python
 class Solution:
@@ -51,14 +51,14 @@ class Solution:
 
 ---
 
-## ⚠️ Problem with This Approach
+##  Problem with This Approach
 
 - Recomputes same values many times
 - Leads to exponential growth
 
 Example:
 - `fib(5)` → `fib(4)` + `fib(3)`
-- `fib(4)` → again computes `fib(3)` ❌
+- `fib(4)` → again computes `fib(3)` 
 
 ---
 
@@ -70,7 +70,7 @@ O(2^n)
 
 ---
 
-## 💾 Space Complexity
+##  Space Complexity
 
 ```
 O(n)
@@ -82,14 +82,14 @@ O(n)
 
 ## ⚡ Approach 2 — Iterative (Optimized)
 
-### 🧠 Idea
+###  Idea
 
 👉 Keep track of last two numbers  
 👉 Build result step by step
 
 ---
 
-## 💻 Code
+##  Code
 
 ```python
 class Solution:
@@ -107,7 +107,7 @@ class Solution:
 
 ---
 
-## 🧠 Dry Run
+##  Dry Run
 
 ### Input
 ```
@@ -126,7 +126,7 @@ fno = 0, sno = 1
 
 ---
 
-## ⏱️ Time Complexity
+##  Time Complexity
 
 ```
 O(n)
@@ -134,7 +134,7 @@ O(n)
 
 ---
 
-## 💾 Space Complexity
+##  Space Complexity
 
 ```
 O(1)
@@ -144,14 +144,14 @@ O(1)
 
 ## ⚡ Approach 3 — Recursion + Memoization (DP)
 
-### 🧠 Idea
+###  Idea
 
 👉 Store computed values  
 👉 Avoid recomputation
 
 ---
 
-## 💻 Code
+##  Code
 
 ```python
 from functools import cache
@@ -166,16 +166,16 @@ class Solution:
 
 ---
 
-## 🧠 Why This Works
+##  Why This Works
 
 - First call → computes values
 - Next calls → reuse cached results
 
-👉 Converts exponential → linear
+ Converts exponential → linear
 
 ---
 
-## ⏱️ Time Complexity
+##  Time Complexity
 
 ```
 O(n)
@@ -193,7 +193,7 @@ O(n)
 
 ---
 
-## ⚠️ Edge Cases
+##  Edge Cases
 
 ### n = 0
 ```
@@ -213,7 +213,7 @@ n = 3 → 2
 
 ---
 
-## 🎯 Interview Takeaways
+##  Interview Takeaways
 
 - Understand recursion clearly
 - Identify overlapping subproblems
@@ -222,9 +222,9 @@ n = 3 → 2
 
 ---
 
-## 📌 Key Pattern
+##  Key Pattern
 
-👉 **"Overlapping subproblems → use DP"**
+ **"Overlapping subproblems → use DP"**
 
 ---
 
@@ -236,7 +236,7 @@ n = 3 → 2
 
 ---
 
-## 🚀 Final Thoughts
+##  Final Thoughts
 
 Progression to remember:
 
